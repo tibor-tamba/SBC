@@ -13,7 +13,6 @@ namespace ScreenBrightnessService
         public int BatteryLifeTime;
         public int BatteryFullLifeTime;
 
-        // direct instantation not intended, use GetPowerState.
         public PowerState() { }
 
         public PowerState GetPowerState()
@@ -31,7 +30,6 @@ namespace ScreenBrightnessService
         private static extern bool GetSystemPowerStatusRef(PowerState sps);
     }
 
-    // Note: Underlying type of byte to match Win32 header
     public enum ACLineStatus : byte
     {
         Offline = 0, Online = 1, Unknown = 255

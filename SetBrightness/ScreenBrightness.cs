@@ -17,14 +17,13 @@ namespace SetBrightness
             resultEnum.MoveNext();
             brightnessClass = resultEnum.Current;
             
-            // We need to create an instance to use the Set method!
+            // Create an instance to use the Set method!
             var instanceName = (string)brightnessClass["InstanceName"];
             brightnessInstance = new ManagementObject("root\\WMI", "WmiMonitorBrightnessMethods.InstanceName='" + instanceName + "'", null);
         }
 
         public int GetDeviceCurrentBrightness()
         {
-            // Getting the current value.
             var value = brightnessClass.GetPropertyValue("CurrentBrightness");
             var valueString = value.ToString();
             return int.Parse(valueString);
@@ -34,7 +33,6 @@ namespace SetBrightness
         {
             if (newValue < 0) { newValue = 0; }
             if (newValue > 100) { newValue = 100; }
-
             var inParams = brightnessInstance.GetMethodParameters("WmiSetBrightness");
             inParams["Brightness"] = newValue;
             inParams["Timeout"] = 0;

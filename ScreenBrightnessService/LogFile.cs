@@ -1,9 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace ScreenBrightnessService
 {
@@ -22,7 +17,7 @@ namespace ScreenBrightnessService
         {
             try
             {
-                FileStream fs = new FileStream(LogFilePath, FileMode.Create,FileAccess.Write,FileShare.Read);
+                FileStream fs = new FileStream(LogFilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 fs.Flush(); fs.Close();
             }
             catch { }
@@ -32,7 +27,7 @@ namespace ScreenBrightnessService
         {
             try
             {
-                Logfilefs = new FileStream(LogFilePath,FileMode.Append,FileAccess.Write,FileShare.Read);
+                Logfilefs = new FileStream(LogFilePath, FileMode.Append, FileAccess.Write, FileShare.Read);
                 Logfilesw = new StreamWriter(Logfilefs);
             }
             catch { }
