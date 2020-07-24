@@ -42,6 +42,7 @@
             this.serviceInstaller1.Description = "Controls the screen brightness when the supply power changed.";
             this.serviceInstaller1.DisplayName = "Screen Brightness Controller";
             this.serviceInstaller1.ServiceName = "BrightControl";
+            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
